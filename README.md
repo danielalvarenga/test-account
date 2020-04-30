@@ -1,24 +1,29 @@
-# README
+# TEST ACCOUNT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Create docker image
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
+`./build.sh`
 
 * Database creation
 
-* Database initialization
+`docker-compose run --rm web rails db:setup`
+
+* Database update
+
+`docker-compose run --rm web rails db:migrate`
+
+* Start application
+
+`docker-compose up`
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+`docker-compose run --rm web rspec`
 
-* Deployment instructions
+* Access application folder inside container
 
-* ...
+`docker-compose run --rm web bash`
+
+* Finalize application containers
+
+`docker-compose down`
